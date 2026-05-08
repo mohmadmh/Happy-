@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معايدة محمد | عيدكم مبارك</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0f172a;
+            color: #f8fafc;
+            font-family: 'Amiri', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+        }
+
+        /* تأثير الإضاءة السينمائية */
+        .spotlight {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 30%, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* إطار الصورة الفاخر */
+        .image-wrapper {
+            width: 300px;
+            height: 400px;
+            margin: 0 auto 30px;
+            position: relative;
+            padding: 10px;
+            background: linear-gradient(135deg, #b45309 0%, #78350f 100%);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(245, 158, 11, 0.2);
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            font-family: 'Aref Ruqaa', serif;
+            font-size: 4rem;
+            color: #fbbf24;
+            margin: 0;
+            text-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+        }
+
+        .greeting-text {
+            font-size: 1.5rem;
+            color: #cbd5e1;
+            margin: 15px 0;
+            letter-spacing: 1px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(251, 191, 36, 0.2);
+            font-size: 1.2rem;
+            color: #fbbf24;
+        }
+
+        /* تأثير الجزيئات المتساقطة البسيط */
+        .particle {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(100vh); }
+        }
+    </style>
+</head>
+<body>
+    <div class="spotlight"></div>
+    
+    <div class="container">
+        <div class="image-wrapper">
+            <img src="data:image/png;base64," alt="محمد">
+        </div>
+        
+        <h1>عيدكم مبارك</h1>
+        <p class="greeting-text">كل عام وأنتم بألف خير</p>
+        
+        <div class="footer">
+            محبكم | محمد
+        </div>
+    </div>
+
+    <script>
+        // إضافة بعض الحيوية للخلفية
+        for(let i=0; i<30; i++) {
+            let p = document.createElement('div');
+            p.className = 'particle';
+            p.style.left = Math.random() * 100 + 'vw';
+            p.style.top = -10 + 'px';
+            p.style.width = p.style.height = Math.random() * 3 + 'px';
+            p.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            p.style.animationDelay = Math.random() * 5 + 's';
+            document.body.appendChild(p);
+        }
+    </script>
+</body>
+</html>
